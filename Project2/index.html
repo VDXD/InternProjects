@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login page</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <nav>
+        <h1>LOGIN PAGE</h1>
+        <button>Login</button>
+      </nav>
+
+      <div class="content">
+        <div class="login-sec">
+          <h1>Sign Up</h1>
+          <div class="sign-up">
+            <h5>Already have a Account? <a href="">Login.</a></h5>
+          </div>
+          <form action="">
+            <div class="username-password">
+              <input id="email" type="email" placeholder="Username" required />
+            </div>
+            <div class="username-password">
+              <input
+                id="password"
+                type="password"
+                placeholder="Password"
+                required
+              />
+            </div>
+
+            <div class="remember-forgot">
+              <label for=""><input type="checkbox" />Remember Me</label>
+              <a href="">Forgot Password?</a>
+            </div>
+
+            <button id="register" type="submit" class="btn">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="module">
+	  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+	  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
+	  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+	  
+	  const firebaseConfig = {
+        apiKey: "AIzaSyCzq7k6YVwcIA_LfhH0ChjBCtDFXITVxM0",
+        authDomain: "login-page-369e6.firebaseapp.com",
+        projectId: "login-page-369e6",
+        storageBucket: "login-page-369e6.appspot.com",
+        messagingSenderId: "319730094884",
+        appId: "1:319730094884:web:117d8d7e54c4a753d3d9b1",
+        measurementId: "G-C8VMVXML4Z",
+      };
+
+	  const app = initializeApp(firebaseConfig);
+	  const analytics = getAnalytics(app);
+	  const auth = getAuth();
+	  console.log(app);
+
+	  
+  
+	  document.getElementById("register").addEventListener("click", function() {
+		  var email =  document.getElementById("email").value;
+		  var password = document.getElementById("password").value;
+		  createUserWithEmailAndPassword(auth, email, password)
+		  .then((userCredential) => {
+		    const user = userCredential.user;
+		    console.log(user);
+		    alert("Registration successfully!!");
+		  })
+		  .catch((error) => {
+		    const errorCode = error.code;
+		    const errorMessage = error.message;
+		    console.log(errorMessage);
+		    alert(error);
+		  });		  		  
+	  });
+
+	</script>
+</html>

@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background: url(img.jpg) no-repeat;
+    color: white;
+}
+
+nav {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3vw;
+}
+
+nav button {
+    border: 1px solid white;
+    color: white;
+    background: transparent;
+    padding: 0.5vw 1vw;
+    border-radius: 4px;
+}
+
+nav h1 {
+    font-size: 2.5vw;
+    font-weight: 600;
+}
+
+nav p {
+    font-size: 1vw;
+    position: relative;
+    left: 29%;
+    color: rgb(26, 26, 25);
+    font-weight: 600;
+}
+
+.content {
+    height: calc(100% - 100px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-sec {
+    height: auto;
+    width: calc(100% - 70%);
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255, .2);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4vh;
+    gap: 4vh;
+}
+
+.login-sec h1 {
+    font-size: 3vw;
+    font-weight: 600;
+}
+
+.login-sec .sign-up {
+    font-size: 1.3vw;
+    font-weight: 600;
+}
+
+.login-sec .sign-up a {
+    text-decoration: none;
+    color: rgb(46, 245, 255);
+}
+
+.sign-up a:hover {
+    text-decoration: underline;
+}
+
+form {
+    height: calc(85% - 100px);
+    width: 80%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vw;
+}
+
+form .username-password {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form .username-password input {
+    height: 100%;
+    width: 90%;
+    background: transparent;
+    border: none;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 2em;
+    padding: 0 1vw;
+    color: white;
+    font-size: 1vw;
+}
+
+form .username-password input::placeholder {
+    color: white;
+    font-size: 1vw;
+    font-weight: 500;
+}
+
+form .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95vw;
+    gap: 4vw;
+    margin: -1vw 0 2vh;
+}
+
+form .remember-forgot label input {
+    accent-color: rgb(105, 104, 104);
+    margin-right: 0.2vw;
+    cursor: pointer;
+}
+
+form .remember-forgot a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    color: white;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+form .btn {
+    height: auto;
+    width: 80%;
+    border: none;
+    border-radius: 2em;
+    transition: 0.5s;
+    font-size: 1.3vw;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: rgb(254, 254, 254);
+    margin-bottom: 5vh;
+    padding: 1vh 0;
+    color: black;
+}
+
+form .btn:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 600px) {
+    nav {
+        height: 70px;
+        padding: 0 4vw;
+    }
+
+    nav h1 {
+        font-size: 6vw;
+    }
+
+    .login-sec {
+        height: auto;
+        width: calc(100% - 20%);
+        gap: 2vh;
+    }
+
+    .login-sec h1 {
+        font-size: 10vw;
+    }
+
+    .login-sec .sign-up {
+        font-size: 4vw;
+    }
+
+    form .username-password {
+        padding-top: 1.5vh;
+    }
+
+    form .username-password input {
+        padding: 0 2vw;
+        font-size: 3vw;
+        font-weight: 500;
+    }
+
+    form .username-password input::placeholder {
+        font-size: 3vw;
+        font-weight: 500;
+    }
+
+    form .remember-forgot {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        font-size: 3vw;
+        margin: 1vw 0 2vh;
+    }
+
+    form .remember-forgot label input {
+        accent-color: rgb(110, 103, 103);
+    }
+
+    form .btn {
+        font-size: 3.5vw;
+        margin-bottom: 2vh;
+    }
+}
